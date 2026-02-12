@@ -1,0 +1,516 @@
+{
+  "info": {
+    "_postman_id": "2fa5e937-3dc2-4fa9-82b0-14a9a5e452ec",
+    "name": "AlbruGroup",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32906795"
+  },
+  "item": [
+    {
+      "name": "auth-service",
+      "item": []
+    },
+    {
+      "name": "rrhh-service",
+      "item": [
+        {
+          "name": "Empleados",
+          "item": [
+            {
+              "name": "Empleado",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nombres\": \"Pablo Ernesto\",\r\n    \"apellidos\": \"Mamani Quispe\",\r\n    \"tipoDocumento\": \"CE\",\r\n    \"numeroDocumento\": \"25413802\",\r\n    \"nacionalidad\": \"PERUANO\",\r\n    \"fechaNacimiento\": \"1999-03-06\",\r\n    \"estadoCivil\": \"CASADO\",\r\n    \"tieneHijos\": false,\r\n    \"celularPersonal\": \"923763302\",\r\n    \"correoPersonal\": \"pablo@gmail.com\",\r\n    \"celularCorporativo\": \"943763301\",\r\n    \"correo\": \"pablo@gmail.com\",\r\n    \"distrito\": \"SAN_MARTÍN_DE_PORRES\",\r\n    \"direccion\": \"Fermin Tanguis 079\",\r\n    \"banco\": \"BCP\",\r\n    \"cuentaBancaria\": \"12344677890\",\r\n    \"cuentaInterbancaria\": \"09876543234343\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/empleados",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "empleados"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Empleados",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/empleados?estado=POSTULANTE&dni=75413802",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "empleados"
+                  ],
+                  "query": [
+                    {
+                      "key": "estado",
+                      "value": "POSTULANTE"
+                    },
+                    {
+                      "key": "dni",
+                      "value": "75413802"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Empleado dni",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/empleados/75413802/numero-documento",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "empleados",
+                    "75413802",
+                    "numero-documento"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Datos Personales",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nombres\": \"Julio Edinson\",\r\n    \"apellidos\": \"Vitterio Bernuy\",\r\n    \"tipoDocumento\": \"DNI\",\r\n    \"numeroDocumento\": \"75413802\",\r\n    \"nacionalidad\": \"PERUANO\",\r\n    \"fechaNacimiento\": \"1999-03-06\",\r\n    \"estadoCivil\": \"SOLTERO\",\r\n    \"tieneHijos\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/empleados/1/datos-personales",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "empleados",
+                    "1",
+                    "datos-personales"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Datos Contacto Ubicacion",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"celularPersonal\": \"943763301\",\r\n    \"correoPersonal\": \"jevbxx@gmail.com\",\r\n    \"distrito\": \"CERCADO_DE_LIMA\",\r\n    \"direccion\": \"Prolongacion 07046\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/empleados/1/datos-contacto-ubicacion",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "empleados",
+                    "1",
+                    "datos-contacto-ubicacion"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Datos Financieros",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"banco\": \"BCP\",\r\n    \"cuentaBancaria\": \"222344677890\",\r\n    \"cuentaInterbancaria\": \"0000543234343\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/empleados/1/datos-financieros",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "empleados",
+                    "1",
+                    "datos-financieros"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Datos Contacto Corporativo",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"celularCorporativo\": \"987654321\",\r\n    \"correoCorporativo\": \"usuario@gmail.com\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/empleados/1/datos-corporativos",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "empleados",
+                    "1",
+                    "datos-corporativos"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Contratos",
+          "item": [
+            {
+              "name": "Contrato",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"puestoTrabajo\": \"SUPERVISOR_VENTAS\",\r\n    \"regimen\": \"RECIBO_POR_HONORARIOS\",\r\n    \"modalidad\": \"SUPER_FULL\",\r\n    \"seguroSalud\": \"CIS\",\r\n    \"sistemaPensiones\": \"AFP_HABITAD\",\r\n    \"sueldoBase\": 2000.00,\r\n    \"fechaInicio\": \"2026-03-06\",\r\n    \"fechaFin\": null\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/contratos/1/registrar",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "contratos",
+                    "1",
+                    "registrar"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Contratos Por Empleado",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nombres\": \"Pablo Ernesto\",\r\n    \"apellidos\": \"Mamani Quispe\",\r\n    \"tipoDocumento\": \"CE\",\r\n    \"numeroDocumento\": \"25413802\",\r\n    \"nacionalidad\": \"PERUANO\",\r\n    \"fechaNacimiento\": \"1999-03-06\",\r\n    \"estadoCivil\": \"CASADO\",\r\n    \"tieneHijos\": false,\r\n    \"celularPersonal\": \"923763302\",\r\n    \"celularCorporativo\": \"943763301\",\r\n    \"correo\": \"pablo@gmail.com\",\r\n    \"distrito\": \"SAN_MARTÍN_DE_PORRES\",\r\n    \"direccion\": \"Fermin Tanguis 079\",\r\n    \"banco\": \"BCP\",\r\n    \"cuentaBancaria\": \"12344677890\",\r\n    \"cuentaInterbancaria\": \"09876543234343\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/contratos/1/historico",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "contratos",
+                    "1",
+                    "historico"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Contrato Vigente",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/contratos/1/vigente",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "contratos",
+                    "1",
+                    "vigente"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Cesar Contrato",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"fechaFin\": \"2026-03-31\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/contratos/1/cesar-contrato",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "contratos",
+                    "1",
+                    "cesar-contrato"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Pagos",
+          "item": [
+            {
+              "name": "Pagos",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nombres\": \"Pablo Ernesto\",\r\n    \"apellidos\": \"Mamani Quispe\",\r\n    \"tipoDocumento\": \"CE\",\r\n    \"numeroDocumento\": \"25413802\",\r\n    \"nacionalidad\": \"PERUANO\",\r\n    \"fechaNacimiento\": \"1999-03-06\",\r\n    \"estadoCivil\": \"CASADO\",\r\n    \"tieneHijos\": false,\r\n    \"celularPersonal\": \"923763302\",\r\n    \"celularCorporativo\": \"943763301\",\r\n    \"correo\": \"pablo@gmail.com\",\r\n    \"distrito\": \"SAN_MARTÍN_DE_PORRES\",\r\n    \"direccion\": \"Fermin Tanguis 079\",\r\n    \"banco\": \"BCP\",\r\n    \"cuentaBancaria\": \"12344677890\",\r\n    \"cuentaInterbancaria\": \"09876543234343\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/pagos",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "pagos"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Pago",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "    {\r\n        \"fechaInicio\": \"2026-02-01\",\r\n        \"fechaFin\": null,\r\n        \"sueldoBase\": 1030.00,\r\n        \"asignacionFamiliar\": 80.00,\r\n        \"bonoPuntualidad\": 20.00,\r\n        \"comisionSemanal\": null,\r\n        \"comisionMensual\": null,\r\n        \"bonoExtra\": 50.00\r\n    }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/pagos/1/pagar-contrato",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "pagos",
+                    "1",
+                    "pagar-contrato"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Postulantes",
+          "item": [
+            {
+              "name": "Postulante",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"nombres\": \"Julio Edinson\",\r\n  \"apellidos\": \"Vitterio Bernuy\",\r\n  \"tipoDocumento\": \"DNI\",\r\n  \"numeroDocumento\": \"75413802\",\r\n  \"celularPersonal\": \"943763301\",\r\n  \"origen\": \"INDEED\",\r\n  \"puestoTrabajo\": \"ASESOR_VENTAS\",\r\n  \"pagoDiaCapacitacion\": 20.00,\r\n  \"fechaInicio\": \"2026-01-01\",\r\n  \"fechaFin\": \"2026-02-01\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/postulantes",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "postulantes"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Postulantes",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/postulantes?estado=EN_PROCESO",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "postulantes"
+                  ],
+                  "query": [
+                    {
+                      "key": "estado",
+                      "value": "EN_PROCESO"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Estado Postulantes",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"cambios\": [\r\n    {\r\n      \"id\": 1,\r\n      \"estado\": \"APROBADO\"\r\n    },\r\n    {\r\n      \"id\": 2,\r\n      \"estado\": \"RECHAZADO\"\r\n    },\r\n    {\r\n      \"id\": 3,\r\n      \"estado\": \"APROBADO\"\r\n    }\r\n  ]\r\n}\r\n\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/postulantes",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "postulantes"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Datos Postulacion",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"origen\": \"INDEED\",\r\n  \"puestoTrabajo\": \"ASESOR_VENTAS\",\r\n  \"pagoDiaCapacitacion\": 20.00,\r\n  \"fechaInicio\": \"2026-01-01\",\r\n  \"fechaFin\": \"2026-02-01\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/postulantes/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "postulantes",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lead-service",
+      "item": []
+    }
+  ]
+}
