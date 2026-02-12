@@ -1,6 +1,6 @@
 # ALBRUGROUP - RRHH 👥
 
-## 🎯 Propósito del Sistema
+## 🎯 Propósito del Sistema MODIFICADO
 
 Sistema profesional para la gestion del personal de una empresa, pensado para un flujo de trabajo coordinado entre el area de recursos humanos y contabilidad. Centraliza la informacion del ciclo completo de personal (postulacion, contratacion y pago), y guarda datos estructurados para reportes y metricas operativas.
 
